@@ -1,0 +1,39 @@
+def modify_string(s):
+
+    freq = [0] * 26  # Initialize frequency array for alphabets
+
+    
+
+    for char in s:
+
+        freq[ord(char) - ord('a')] += 1
+
+    
+
+    result = []
+
+    
+
+    for char in s:
+
+        new_char = chr(((ord(char) - ord('a') + freq[ord(char) - ord('a')]) % 26) + ord('a'))
+
+        result.append(new_char)
+
+    
+
+    return ''.join(result)
+
+
+
+# Test cases
+
+print(modify_string("ghee"))     # Output: hggi
+
+print(modify_string("elephant")) # Output: epehdsgf
+
+print(modify_string("apple"))    # Output: anppe
+
+print(modify_string("orange"))   # Output: opsbwh
+
+print(modify_string("lion"))     # Output: lzqn
