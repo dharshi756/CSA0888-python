@@ -1,0 +1,73 @@
+
+
+def calculate_price(fresh_loaves, day_old_loaves):
+
+    price_per_loaf = 185
+
+    discount_percentage = 60
+
+    
+
+    fresh_loaves_price = fresh_loaves * price_per_loaf
+
+    day_old_loaves_price = day_old_loaves * price_per_loaf * (1 - discount_percentage / 100)
+
+    total_price = fresh_loaves_price + day_old_loaves_price
+
+    
+
+    return fresh_loaves_price, day_old_loaves_price, total_price
+
+
+
+# Input
+
+fresh_loaves = int(input("Enter the number of fresh loaves purchased: "))
+
+day_old_loaves = int(input("Enter the number of day old loaves purchased: "))
+
+
+
+# Calculate prices
+
+fresh_price, day_old_price, total_price = calculate_price(fresh_loaves, day_old_loaves)
+
+
+
+# Output
+
+print("Regular price: Rs.{:.2f}".format(fresh_price))
+
+print("Amount of new loaves: Rs.{:.2f}".format(fresh_price))
+
+print("Amount of day old loaves: Rs.{:.2f}".format(day_old_price))
+
+print("Total amount: Rs.{:.2f}".format(total_price))
+
+print("Test Case 1:")
+
+calculate_price(4, 6)  # Output will be calculated and displayed
+
+
+
+print("Test Case 2:")
+
+calculate_price(-1, 5) # Output will be calculated and displayed
+
+
+
+print("Test Case 3:")
+
+calculate_price(0, 6)  # Output will be calculated and displayed
+
+
+
+print("Test Case 4:")
+
+calculate_price(7, 8)  # Output will be calculated and displayed
+
+
+
+print("Test Case 5:")
+
+calculate_price(3, 4)  # Output will be calculated and displayed
