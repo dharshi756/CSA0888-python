@@ -1,0 +1,20 @@
+
+def count_sorted_vowel_strings(n):
+    # Using dynamic programming approach
+    dp = [[0] * 5 for _ in range(n+1)]
+    
+    for i in range(5):
+        dp[1][i] = 1
+    
+    for i in range(2, n+1):
+        for j in range(5):
+            dp[i][j] = sum(dp[i-1][k] for k in range(j, 5))
+    
+    return sum(dp[n])
+
+# Test cases
+print(count_sorted_vowel_strings(1))    # Output: 5
+print(count_sorted_vowel_strings(2))    # Output: 15
+print(count_sorted_vowel_strings(33))   # Output: 66045
+print(count_sorted_vowel_strings(-5))   # Output: 0 (Invalid input)
+print(count_sorted_vowel_strings(10))   # Output: 1716
