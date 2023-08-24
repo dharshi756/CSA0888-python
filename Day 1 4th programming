@@ -1,0 +1,35 @@
+function isPalindrome(x):
+
+    if x < 0:
+
+        return False
+
+    
+
+    original_x = x
+
+    reversed_x = 0
+
+    
+
+    while x > 0:
+
+        digit = x % 10
+
+        reversed_x = reversed_x * 10 + digit
+
+        x //= 10
+
+    
+
+    return original_x == reversed_x
+
+print(isPalindrome(121))   # Output: True
+
+print(isPalindrome(-121))  # Output: False
+
+print(isPalindrome(10))    # Output: False
+
+print(isPalindrome("abc")) # Output: False (Invalid input)
+
+print(isPalindrome(0))     # Output: True
