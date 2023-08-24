@@ -1,0 +1,25 @@
+def isNumber(s):
+
+    try:
+
+        float(s)  # Try converting the string to a float
+
+        return True
+
+    except ValueError:
+
+        return False
+
+
+
+# Test cases
+
+print(isNumber("0"))    # Output: True
+
+print(isNumber("e"))    # Output: False
+
+print(isNumber(" "))    # Output: False
+
+print(isNumber("."))    # Output: False
+
+print(isNumber("%"))    # Outpu
