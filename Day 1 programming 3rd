@@ -1,0 +1,46 @@
+function isHappy(n):
+
+    seen = set()  # Keep track of seen numbers to detect cycles
+
+    
+
+    while n != 1 and n not in seen:
+
+        seen.add(n)
+
+        n = calculate_next(n)
+
+    
+
+    return n == 1
+
+
+
+function calculate_next(n):
+
+    next_num = 0
+
+    while n > 0:
+
+        digit = n % 10
+
+        next_num += digit * digit
+
+        n //= 10
+
+    return next_num
+
+print(isHappy(19))  # Output: True
+
+print(isHappy(2))   # Output: False
+
+print(isHappy(-1))  # Output: False
+
+print(isHappy(0))   # Output: False
+
+print(isHappy(5))   # Output: False
+
+
+
+
+
