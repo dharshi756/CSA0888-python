@@ -1,0 +1,50 @@
+def isomorphic_strings(s, t):
+
+    if len(s) != len(t):
+
+        return False
+
+    
+
+    mapping = {}
+
+    used_chars = set()
+
+    
+
+    for i in range(len(s)):
+
+        if s[i] in mapping:
+
+            if mapping[s[i]] != t[i]:
+
+                return False
+
+        else:
+
+            if t[i] in used_chars:
+
+                return False
+
+            mapping[s[i]] = t[i]
+
+            used_chars.add(t[i])
+
+    
+
+    return True
+
+
+
+# Test cases
+
+print(isomorphic_strings("egg", "add"))      # Output: True
+
+print(isomorphic_strings("foo", "bar"))      # Output: False
+
+print(isomorphic_strings("paper", "title"))  # Output: True
+
+print(isomorphic_strings("fry", "sky"))      # Output: True
+
+print(isomorphic_strings("apples", "apple")) # Output: False
+
